@@ -1,0 +1,260 @@
+Index: src/ContaCorrente.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>public class ContaCorrente {\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ContaCorrente.java b/src/ContaCorrente.java
+--- a/src/ContaCorrente.java	(revision bdbc5215371ac0ac8e119d40279d2d2c4edb95c4)
++++ b/src/ContaCorrente.java	(date 1651694359117)
+@@ -1,2 +1,9 @@
+-public class ContaCorrente {
++public class ContaCorrente extends Conta {
++
++    @Override
++    public void imprimirExtrato() {
++        System.out.println("O extrato da conta corrente é: ");
++        super.imprimirInfosComuns();
++    }
++
+ }
+Index: src/ContaPoupanca.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>public class ContaPoupanca {\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ContaPoupanca.java b/src/ContaPoupanca.java
+--- a/src/ContaPoupanca.java	(revision bdbc5215371ac0ac8e119d40279d2d2c4edb95c4)
++++ b/src/ContaPoupanca.java	(date 1651694359098)
+@@ -1,2 +1,9 @@
+-public class ContaPoupanca {
++public class ContaPoupanca extends Conta {
++
++    @Override
++    public void imprimirExtrato() {
++        System.out.println("O extrato da conta poupanca é: ");
++        super.imprimirInfosComuns();
++    }
++
+ }
+Index: src/IConta.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/IConta.java b/src/IConta.java
+new file mode 100644
+--- /dev/null	(date 1651695106202)
++++ b/src/IConta.java	(date 1651695106202)
+@@ -0,0 +1,11 @@
++public interface IConta {
++
++    void sacar(double valor);
++
++    void depositar(double valor);
++
++    void transferir(double valor, Conta contaDestino);
++
++    void imprimirExtrato();
++
++}
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"5da99225-e8bc-4f1f-b878-84a742c48210\" name=\"Changes\" comment=\"Primeiro commit.\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"28iBDle0qn85REKob0HY0FsY4pd\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"5da99225-e8bc-4f1f-b878-84a742c48210\" name=\"Changes\" comment=\"\" />\r\n      <created>1651689411347</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1651689411347</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Primeiro commit.\">\r\n      <created>1651690006642</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1651690006642</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Primeiro commit.\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Primeiro commit.\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision bdbc5215371ac0ac8e119d40279d2d2c4edb95c4)
++++ b/.idea/workspace.xml	(date 1651694404103)
+@@ -4,7 +4,16 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="5da99225-e8bc-4f1f-b878-84a742c48210" name="Changes" comment="Primeiro commit." />
++    <list default="true" id="5da99225-e8bc-4f1f-b878-84a742c48210" name="Changes" comment="Primeiro commit.">
++      <change afterPath="$PROJECT_DIR$/src/Cliente.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/Conta.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/IConta.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Banco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Banco.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/ContaCorrente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ContaCorrente.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/ContaPoupanca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ContaPoupanca.java" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -13,12 +22,16 @@
+   <component name="FileTemplateManagerImpl">
+     <option name="RECENT_TEMPLATES">
+       <list>
++        <option value="Interface" />
+         <option value="Class" />
+       </list>
+     </option>
+   </component>
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++  </component>
++  <component name="MarkdownSettingsMigration">
++    <option name="stateVersion" value="1" />
+   </component>
+   <component name="ProjectId" id="28iBDle0qn85REKob0HY0FsY4pd" />
+   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+@@ -34,6 +47,20 @@
+     "RunOnceActivity.ShowReadmeOnStart": "true"
+   }
+ }]]></component>
++  <component name="RunManager">
++    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="Main" />
++      <module name="br.com.banco" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <recent_temporary>
++      <list>
++        <item itemvalue="Application.Main" />
++      </list>
++    </recent_temporary>
++  </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+@@ -50,7 +77,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1651690006642</updated>
+     </task>
+-    <option name="localTasksCounter" value="2" />
++    <task id="LOCAL-00002" summary="Primeiro commit.">
++      <created>1651690210508</created>
++      <option name="number" value="00002" />
++      <option name="presentableId" value="LOCAL-00002" />
++      <option name="project" value="LOCAL" />
++      <updated>1651690210508</updated>
++    </task>
++    <option name="localTasksCounter" value="3" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+Index: src/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Main.java b/src/Main.java
+new file mode 100644
+--- /dev/null	(date 1651695106181)
++++ b/src/Main.java	(date 1651695106181)
+@@ -0,0 +1,14 @@
++public class Main {
++    public static void main(String[] args) {
++
++        Conta cc = new ContaCorrente();
++        cc.depositar(100);
++
++        Conta poupanca = new ContaPoupanca();
++
++        cc.transferir(100, poupanca);
++
++        cc.imprimirExtrato();
++        poupanca.imprimirExtrato();
++    }
++}
+Index: src/Cliente.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Cliente.java b/src/Cliente.java
+new file mode 100644
+--- /dev/null	(date 1651690447428)
++++ b/src/Cliente.java	(date 1651690447428)
+@@ -0,0 +1,5 @@
++public class Cliente {
++
++    public String nome;
++
++}
+Index: src/Conta.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Conta.java b/src/Conta.java
+new file mode 100644
+--- /dev/null	(date 1651694251802)
++++ b/src/Conta.java	(date 1651694251802)
+@@ -0,0 +1,49 @@
++public abstract class Conta implements IConta {
++
++    private static final int AGENCIA_PADRAO = 0001;
++
++    private static int SEQUENCIAL = 1;
++
++    protected int agencia;
++    protected int numero;
++    protected double saldo;
++
++    public Conta() {
++        this.agencia = AGENCIA_PADRAO;
++        this.numero = SEQUENCIAL++;
++    }
++
++    public int getAgencia() {
++        return agencia;
++    }
++
++    public int getNumero() {
++        return numero;
++    }
++
++    public double getSaldo() {
++        return saldo;
++    }
++
++    @Override
++    public void sacar(double valor) {
++        saldo = -valor;
++    }
++
++    @Override
++    public void depositar(double valor) {
++        saldo = +valor;
++    }
++
++    @Override
++    public void transferir(double valor, Conta contaDestino) {
++        this.sacar(valor);
++        contaDestino.depositar(valor);
++    }
++    protected void imprimirInfosComuns() {
++        System.out.printf("Agência: %d%n", this.agencia);
++        System.out.printf("Numero: %d%n", this.numero);
++        System.out.println("Saldo: " + this.saldo);
++    }
++
++}
+Index: src/Banco.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>public class Banco {\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Banco.java b/src/Banco.java
+--- a/src/Banco.java	(revision bdbc5215371ac0ac8e119d40279d2d2c4edb95c4)
++++ b/src/Banco.java	(date 1651690427618)
+@@ -1,3 +1,6 @@
+ public class Banco {
+ 
++    public String nome;
++
++
+ }
