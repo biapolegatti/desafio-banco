@@ -1,5 +1,7 @@
-public abstract class Conta implements IConta {
+import lombok.Getter;
 
+@Getter
+public abstract class Conta implements IConta {
     private static final int AGENCIA_PADRAO = 0001;
 
     private static int SEQUENCIAL = 1;
@@ -13,26 +15,14 @@ public abstract class Conta implements IConta {
         this.numero = SEQUENCIAL++;
     }
 
-    public int getAgencia() {
-        return agencia;
-    }
-
-    public int getNumero() {
-        return numero;
-    }
-
-    public double getSaldo() {
-        return saldo;
-    }
-
     @Override
     public void sacar(double valor) {
-        saldo = -valor;
+        saldo =- valor;
     }
 
     @Override
     public void depositar(double valor) {
-        saldo = +valor;
+        saldo =+ valor;
     }
 
     @Override
@@ -40,6 +30,7 @@ public abstract class Conta implements IConta {
         this.sacar(valor);
         contaDestino.depositar(valor);
     }
+
     protected void imprimirInfosComuns() {
         System.out.printf("Agência: %d%n", this.agencia);
         System.out.printf("Numero: %d%n", this.numero);
